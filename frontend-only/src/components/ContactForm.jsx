@@ -1,5 +1,7 @@
 import { useState } from 'react';
-const initialState = { name: '', email: '', phone: '', subject: '', message: '' };
+
+const initialState = { name: '', email: '', subject: '', message: '' };
+const accessKey = 'c07e7014-9354-4ec8-b71a-dffae2f34f9e';
 
 export default function ContactForm() {
   const [form, setForm] = useState(initialState);
@@ -22,10 +24,29 @@ export default function ContactForm() {
     if (!validate()) return;
 
     setStatus('submitting');
-    window.setTimeout(() => {
+    setErrors({});
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({ access_key: accessKey, ...form }),
+      });
+      const result = await response.json();
+
+      if (!response.ok || !result.success) {
+        throw new Error(result.message || 'Unable to send your message. Please try again.');
+      }
+
       setStatus('success');
       setForm(initialState);
-    }, 350);
+    } catch (error) {
+      setStatus('error');
+      setErrors({ form: error.message || 'Unable to send your message. Please try again.' });
+    }
   };
 
   if (status === 'success') {
@@ -68,17 +89,8 @@ export default function ContactForm() {
         </Field>
       </div>
 
-      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
-        <Field label="Phone (optional)">
-          <input
-            type="tel"
-            value={form.phone}
-            onChange={update('phone')}
-            className={inputClass()}
-            placeholder="+94 7X XXX XXXX"
-          />
-        </Field>
-        <Field label="Subject (optional)">
+      <div>
+        <Field label="Subject">
           <input
             type="text"
             value={form.subject}
@@ -99,8 +111,10 @@ export default function ContactForm() {
         />
       </Field>
 
+      {errors.form && <p className="text-sm font-medium text-clay-700" role="alert">{errors.form}</p>}
+
       <button type="submit" disabled={status === 'submitting'} className="btn-primary disabled:opacity-60">
-        {status === 'submitting' ? 'Sending…' : 'Send message'}
+        {status === 'submitting' ? 'Sending...' : 'Send message'}
       </button>
     </form>
   );

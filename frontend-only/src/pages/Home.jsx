@@ -51,9 +51,9 @@ export default function Home() {
             </div>
 
             <dl className="mt-12 grid max-w-md grid-cols-3 gap-6 border-t border-teal-950/10 pt-8">
-              <Stat value="50+" label="Member businesses" />
-              <Stat value="12+" label="Annual events" />
-              <Stat value="2018" label="Founded" />
+              <Stat value="30+" label="Member businesses" />
+              <Stat value="4+" label="Annual events" />
+              <Stat value="2022" label="Founded" />
             </dl>
           </div>
 

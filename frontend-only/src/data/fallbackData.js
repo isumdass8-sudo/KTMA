@@ -64,6 +64,38 @@ export const fallbackCommittee = [
   { id: 9, full_name: 'Nalin Nanayakkara', role: 'Accountant', term: '2026-2028', photo_url: 'executive-committee.jpg' },
 ];
 
+export const fallbackMembershipList = [
+  'Angelo Ferdinand',
+  'H.M. Keerthi Bandara',
+  'B. Azard Suhood',
+  'W.M.J.P. Wijekoon',
+  'R.A.C Theekshana Rajapaksha',
+  'D.M.P.P Dissanayake',
+  'H.D. Lalantha Perera',
+  'M.A. Venura Kumara',
+  'Sanjaya Madushanka Wijesinghe',
+  'Mohomed Mahir Faiq Hussain',
+  'Sampath Chaminda Lal',
+  'Upul Chaminda Pushpa Kumara',
+  'W.M.K.R. Senabandara',
+  'Nipuna Viraj Senevirathne',
+  'N.U.A. Nanayakkara',
+  'Namal Bandara Dhanasekara',
+  'Prasanna Romesh Rathnayake',
+  'Isuru Udayanga Chandrathilake',
+  'Akuratiya Kasun Lakmal',
+  'Chethiya Yatawara',
+  'Shashika Yatawara',
+  'N.R. Rukshan Thilakarathne',
+  'R.S. Shamika Kalidasa',
+  'Lasantha Gangdara',
+  'Gamini Thikalasiri',
+  'Janaka Wasantha Bandara',
+  'D.M.P.B. Dissanayake',
+  'Mohammedu Rahuman Mohammedu Rasni',
+  'M.R. Nuwan Senarathne',
+].map((name, index) => ({ membershipNo: index + 1, name }));
+
 export const fallbackBusinessMembers = [
   { id: 1, business_name: 'Sanura Silks', category: 'Retail & Handloom', description: 'Traditional Kandyan handloom textiles and silk products supporting local artisans.', location: 'Kandy City Centre', featured: 1 },
   { id: 2, business_name: 'Abey Silk Centre', category: 'Retail & Handloom', description: 'Fine silks and souvenirs for the discerning traveller.', location: 'Kandy', featured: 0 },
