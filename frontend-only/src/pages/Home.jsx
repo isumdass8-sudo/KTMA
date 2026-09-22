@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import SectionHeading from '../components/SectionHeading';
 import DestinationCard from '../components/DestinationCard';
+import WelcomeOverlay from '../components/WelcomeOverlay';
 import { fallbackDestinations, fallbackGallery, resolveImage } from '../data/fallbackData';
 
 import heroImage from '../assets/gallery/123456789.jpg';
@@ -21,6 +22,7 @@ export default function Home() {
 
   return (
     <>
+      <WelcomeOverlay />
       {/* HERO */}
       <section
         className="relative overflow-hidden bg-sand-50 bg-cover bg-center"

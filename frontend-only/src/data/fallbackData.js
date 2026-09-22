@@ -3,52 +3,15 @@
 // fails (e.g. backend not running yet), these keep the UI fully populated
 // for demos, screenshots, and local development without a DB.
 
-import eventTeamPanorama from '../assets/gallery/event-team-panorama.jpg';
-import eventTeamFull from '../assets/gallery/event-team-full.jpg';
-import eventCricketAction from '../assets/gallery/event-cricket-action.jpg';
-import eventCulturalDance from '../assets/gallery/event-cultural-dance.jpg';
-import eventGathering from '../assets/gallery/event-gathering.jpg';
-import eventAwardsTent from '../assets/gallery/event-awards-tent.jpg';
-import eventTeamDusk from '../assets/gallery/event-team-dusk.jpg';
-import eventGroup1 from '../assets/gallery/event-group-1.jpg';
-import eventDuo from '../assets/gallery/event-duo.jpg';
-import tourismWorldTourismDay from '../assets/gallery/tourism-worldtourismday.jpg';
-import tourismCoconut1 from '../assets/gallery/tourism-coconut-1.jpg';
-import nineArche from '../assets/gallery/nine-arche.jpg';
-import executiveCommittee from '../assets/gallery/executive-committee.jpg';
-import newDestinationImage from '../assets/gallery/987654321.jpg';
-import my1 from '../assets/gallery/my 1.jpg';
-import my2 from '../assets/gallery/my 2.jpg';
-import my3 from '../assets/gallery/my 3.jpg';
-import my4 from '../assets/gallery/my 4.jpg';
-import my5 from '../assets/gallery/my 5.jpg';
-import my6 from '../assets/gallery/my 6.jpg';
-import my7 from '../assets/gallery/my 7.jpg';
+const galleryAssets = import.meta.glob('../assets/gallery/**/*.{jpg,jpeg,png,webp}', {
+  eager: true,
+  query: '?url',
+  import: 'default',
+});
 
-
-export const galleryImages = {
-  'event-team-panorama.jpg': eventTeamPanorama,
-  'event-team-full.jpg': eventTeamFull,
-  'event-cricket-action.jpg': eventCricketAction,
-  'event-cultural-dance.jpg': eventCulturalDance,
-  'event-gathering.jpg': eventGathering,
-  'event-awards-tent.jpg': eventAwardsTent,
-  'event-team-dusk.jpg': eventTeamDusk,
-  'event-group-1.jpg': eventGroup1,
-  'event-duo.jpg': eventDuo,
-  'tourism-worldtourismday.jpg': tourismWorldTourismDay,
-  'tourism-coconut-1.jpg': tourismCoconut1,
-  'nine-arche.jpg': nineArche,
-  'executive-committee.jpg': executiveCommittee,
-  '987654321.jpg': newDestinationImage,
-  'my 1.jpg': my1,
-  'my 2.jpg': my2,
-  'my 3.jpg': my3,
-  'my 4.jpg': my4,
-  'my 5.jpg': my5,
-  'my 6.jpg': my6,
-  'my 7.jpg': my7,
-};
+export const galleryImages = Object.fromEntries(
+  Object.entries(galleryAssets).map(([path, image]) => [path.replace('../assets/gallery/', ''), image]),
+);
 
 export const resolveImage = (filename) => galleryImages[filename] || '';
 
@@ -182,6 +145,61 @@ export const fallbackGallery = [
   { id: 16, title: 'Cricket Tournament Match Action', category: 'Events', image_url: 'my 4.jpg', event_id: 1 },
   { id: 17, title: 'Community Coconut Stall', category: 'Community', image_url: 'my 5.jpg', event_id: null },
   { id: 18, title: 'Community Outreach at Kandy Branch', category: 'Community', image_url: 'my 6.jpg', event_id: null },
+  { id: 19, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555386059_122181577148552693_2812107753044883980_n.jpg', event_id: null },
+  { id: 20, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555421438_122181574718552693_4828852258525659227_n.jpg', event_id: null },
+  { id: 21, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555429194_122181573950552693_6414731051361179122_n.jpg', event_id: null },
+  { id: 22, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555438979_122181576632552693_9146839297011914697_n.jpg', event_id: null },
+  { id: 23, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555462317_122181577034552693_387339891141286056_n.jpg', event_id: null },
+  { id: 24, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555463608_122181578870552693_2915581491771757520_n.jpg', event_id: null },
+  { id: 25, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555464885_122181577622552693_6815493859937549497_n.jpg', event_id: null },
+  { id: 26, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555524259_122181576500552693_634261325409657032_n.jpg', event_id: null },
+  { id: 27, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555528544_122181578150552693_8672564356964958649_n.jpg', event_id: null },
+  { id: 28, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555536833_122181577694552693_2566349200812281467_n.jpg', event_id: null },
+  { id: 29, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555551741_122181573638552693_4118145034068082669_n.jpg', event_id: null },
+  { id: 30, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555551752_122181573836552693_6856062072522229320_n.jpg', event_id: null },
+  { id: 31, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555561050_122181579206552693_5229058446013959906_n.jpg', event_id: null },
+  { id: 32, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555676040_122181573896552693_8886439934522056023_n.jpg', event_id: null },
+  { id: 33, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555721871_122181574274552693_829214457875662542_n.jpg', event_id: null },
+  { id: 34, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555736018_122181574028552693_5322815527985249908_n.jpg', event_id: null },
+  { id: 35, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/555897400_122181577070552693_1682442959656659657_n.jpg', event_id: null },
+  { id: 36, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/556009303_122181574868552693_5351611086937685828_n.jpg', event_id: null },
+  { id: 37, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/556022968_122181575342552693_7630054930916065622_n.jpg', event_id: null },
+  { id: 38, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/556067479_122181577760552693_2603450418034892836_n.jpg', event_id: null },
+  { id: 39, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/556092953_122181576740552693_5982921461064084473_n.jpg', event_id: null },
+  { id: 40, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/556128305_122181574622552693_6931311984029396918_n.jpg', event_id: null },
+  { id: 41, title: '2025 Tourism Day', category: 'Culture', image_url: '2025 tourism day/557246947_122181575348552693_4814487941348033335_n.jpg', event_id: null },
+  { id: 42, title: 'Cancer Hospital Donation', category: 'Community', image_url: 'cancer hospital donation/1000231154.jpg', event_id: null },
+  { id: 43, title: 'Cancer Hospital Donation', category: 'Community', image_url: 'cancer hospital donation/1000231155.jpg', event_id: null },
+  { id: 44, title: 'Cancer Hospital Donation', category: 'Community', image_url: 'cancer hospital donation/1000231156.jpg', event_id: null },
+  { id: 45, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/556864498_122182986866552693_449550902081314826_n.jpg', event_id: null },
+  { id: 46, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/556966012_122182973450552693_7007621868107147048_n.jpg', event_id: null },
+  { id: 47, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557196832_122182976756552693_7993573628305788186_n.jpg', event_id: null },
+  { id: 48, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557547990_122182974686552693_7784515366954656221_n.jpg', event_id: null },
+  { id: 49, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557548043_122182977776552693_9124923879324613296_n.jpg', event_id: null },
+  { id: 50, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557548049_122182975610552693_8178154444505152393_n (1).jpg', event_id: null },
+  { id: 51, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557548049_122182975610552693_8178154444505152393_n.jpg', event_id: null },
+  { id: 52, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557589881_122182974332552693_1906047193628438037_n.jpg', event_id: null },
+  { id: 53, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557596683_122182973798552693_1485353978197176170_n.jpg', event_id: null },
+  { id: 54, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557641815_122182974020552693_93747268584011504_n.jpg', event_id: null },
+  { id: 55, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557712904_122182986002552693_7974435262596056077_n.jpg', event_id: null },
+  { id: 56, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557747417_122182986812552693_2752846537995742716_n.jpg', event_id: null },
+  { id: 57, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557750878_122182975424552693_6051663973900749777_n.jpg', event_id: null },
+  { id: 58, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557849732_122182983320552693_5651577747628829140_n.jpg', event_id: null },
+  { id: 59, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557855664_122182974014552693_1407120832688118826_n.jpg', event_id: null },
+  { id: 60, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557950763_122182986902552693_1084690316075947504_n.jpg', event_id: null },
+  { id: 61, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557999916_122182977068552693_5515773511328554527_n (1).jpg', event_id: null },
+  { id: 62, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/557999916_122182977068552693_5515773511328554527_n.jpg', event_id: null },
+  { id: 63, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558011019_122182973726552693_5957614870312572567_n.jpg', event_id: null },
+  { id: 64, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558300479_122182985936552693_7725886452763668485_n.jpg', event_id: null },
+  { id: 65, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558638979_122182974248552693_6124996434681258798_n.jpg', event_id: null },
+  { id: 66, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558645615_122182973636552693_4170445450855007076_n (1).jpg', event_id: null },
+  { id: 67, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558645615_122182973636552693_4170445450855007076_n.jpg', event_id: null },
+  { id: 68, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558655482_122182980194552693_676553120454973065_n.jpg', event_id: null },
+  { id: 69, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558911062_122182983248552693_6823283500018220020_n.jpg', event_id: null },
+  { id: 70, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558961921_122182988630552693_4270472376753404344_n.jpg', event_id: null },
+  { id: 71, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/558965554_122182982822552693_4562209514804264301_n.jpg', event_id: null },
+  { id: 72, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/559355312_122182974176552693_8544525325543506424_n.jpg', event_id: null },
+  { id: 73, title: 'KTMS Super Cup 2025', category: 'Events', image_url: 'KTMS super cup 2025/559799104_122182975928552693_7153601957938050187_n.jpg', event_id: null },
 ];
 
 export const getFallbackEventWithGallery = (id) => {
