@@ -79,7 +79,7 @@ export default function Home() {
       </section>
 
       {/* MISSION / VISION */}
-      <section id="mission" className="border-y border-teal-950/8 bg-sand-100">
+      <section id="mission" className="border-y border-teal-950/8 bg-white">
         <div className="container-ktma grid grid-cols-1 gap-10 py-16 md:grid-cols-2 md:py-20">
           <div className="rounded-3xl bg-teal-950 p-8 text-sand-50 md:p-10">
             <span className="text-xs font-semibold uppercase tracking-wide text-gold-400">Our Mission</span>

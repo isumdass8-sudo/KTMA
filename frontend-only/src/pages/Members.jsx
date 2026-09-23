@@ -1,14 +1,12 @@
 import PageHero from '../components/PageHero';
 import SectionHeading from '../components/SectionHeading';
 import CommitteeCard from '../components/CommitteeCard';
-import BusinessMemberCard from '../components/BusinessMemberCard';
-import { fallbackCommittee, fallbackBusinessMembers, fallbackMembershipList } from '../data/fallbackData';
+import { fallbackCommittee, fallbackMembershipList } from '../data/fallbackData';
 import heroImage from '../assets/gallery/event-gathering.jpg';
 import groupPhoto from '../assets/gallery/executive-committee.jpg';
 
 export default function Members() {
   const committee = fallbackCommittee;
-  const businesses = fallbackBusinessMembers;
 
   return (
     <>
@@ -61,21 +59,6 @@ export default function Members() {
         </div>
       </section>
 
-      {/* Business members */}
-      <section className="border-t border-teal-950/8 bg-white py-20">
-        <div className="container-ktma">
-          <SectionHeading
-            eyebrow="Member directory"
-            title="Businesses supporting KTMA"
-            description="A growing network of hospitality, retail, and event partners across Kandy."
-          />
-          <div className="mt-10 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {businesses.map((b) => (
-              <BusinessMemberCard key={b.id} business={b} />
-            ))}
-          </div>
-        </div>
-      </section>
     </>
   );
 }
